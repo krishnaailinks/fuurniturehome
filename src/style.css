@@ -587,7 +587,7 @@ footer {
 
   /* --- NAVBAR & HAMBURGER --- */
   .nav-links {
-    display: none;
+    display: flex;
     flex-direction: column;
     position: fixed;
     top: 0;
@@ -606,7 +606,6 @@ footer {
   }
 
   .nav-links.open {
-    display: flex;
     transform: translateX(0);
   }
 
@@ -661,7 +660,7 @@ footer {
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.4);
-    z-index: 150;
+    z-index: 90;
     backdrop-filter: blur(2px);
   }
   .nav-overlay.open {
