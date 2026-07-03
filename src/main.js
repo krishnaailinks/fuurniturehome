@@ -41,7 +41,11 @@ const hamburger = document.createElement('button')
 hamburger.className = 'hamburger'
 hamburger.setAttribute('aria-label', 'Toggle Menu')
 hamburger.innerHTML = '<span></span><span></span><span></span>'
-document.querySelector('.nav-container')?.appendChild(hamburger)
+
+const navContainer = document.querySelector('.nav-container')
+if (navContainer) {
+  navContainer.insertBefore(hamburger, navContainer.firstChild)
+}
 
 // Inject overlay
 const overlay = document.createElement('div')
