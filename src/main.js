@@ -214,3 +214,66 @@ cards.forEach(card => {
     card.style.transition = 'none'
   })
 })
+
+// ===========================
+// CATEGORY FILTERING
+// ===========================
+const filterBtns = document.querySelectorAll('.filter-btn')
+const productCards = document.querySelectorAll('.product-card[data-category]')
+
+if (filterBtns.length > 0 && productCards.length > 0) {
+  
+  // Read URL params for direct link filtering (e.g. ?category=sanitaryware)
+  const urlParams = new URLSearchParams(window.location.search)
+  const initialCategory = urlParams.get('category')
+  
+  function applyFilter(category) {
+    // Update buttons
+    filterBtns.forEach(btn => {
+      if (btn.getAttribute('data-filter') === category) {
+        btn.classList.add('active')
+        btn.style.background = 'var(--primary-color)'
+        btn.style.color = '#fff'
+      } else {
+        btn.classList.remove('active')
+        btn.style.background = 'transparent'
+        btn.style.color = 'var(--text-primary)'
+      }
+    })
+    
+    // Filter cards
+    let visibleCount = 0;
+    productCards.forEach(card => {
+      if (category === 'all' || card.getAttribute('data-category') === category) {
+        card.style.display = 'block'
+        gsap.fromTo(card, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4 })
+        visibleCount++;
+      } else {
+        card.style.display = 'none'
+      }
+    })
+    
+    setTimeout(() => {
+      ScrollTrigger.refresh()
+    }, 100)
+  }
+
+  // Bind click events
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const category = btn.getAttribute('data-filter')
+      applyFilter(category)
+      
+      // Update URL without reload
+      const newUrl = new URL(window.location)
+      newUrl.searchParams.set('category', category)
+      window.history.pushState({}, '', newUrl)
+    })
+  })
+  
+  // Apply initial filter if present in URL
+  if (initialCategory) {
+    applyFilter(initialCategory)
+  }
+}
+

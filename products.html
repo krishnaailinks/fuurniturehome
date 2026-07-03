@@ -34,17 +34,17 @@
         
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;" class="fade-up">
           <h2 style="font-size: 1.8rem;">All Categories</h2>
-          <div style="display: flex; gap: 1rem;">
-            <span class="badge" style="background: var(--primary-color); color: #fff; border:none; margin:0;">All</span>
-            <span class="badge" style="margin:0; cursor:pointer;">Sanitaryware</span>
-            <span class="badge" style="margin:0; cursor:pointer;">Hardware</span>
-            <span class="badge" style="margin:0; cursor:pointer;">Plumbing</span>
+          <div style="display: flex; gap: 1rem;" id="category-filters">
+            <span class="badge filter-btn active" data-filter="all" style="background: var(--primary-color); color: #fff; border:none; margin:0; cursor:pointer;">All</span>
+            <span class="badge filter-btn" data-filter="sanitaryware" style="margin:0; cursor:pointer;">Sanitaryware</span>
+            <span class="badge filter-btn" data-filter="hardware" style="margin:0; cursor:pointer;">Hardware</span>
+            <span class="badge filter-btn" data-filter="plumbing" style="margin:0; cursor:pointer;">Plumbing</span>
           </div>
         </div>
 
         <div class="grid-4" id="catalog-grid">
           <!-- Item 1 -->
-          <div class="product-card fade-up">
+          <div class="product-card fade-up" data-category="sanitaryware">
             <div class="product-img-wrap">
               <img src="/images/shower.jpg" class="product-img" alt="Overhead Showers">
             </div>
@@ -54,7 +54,7 @@
             </div>
           </div>
           <!-- Item 2 -->
-          <div class="product-card fade-up" style="animation-delay: 0.1s">
+          <div class="product-card fade-up" data-category="sanitaryware" style="animation-delay: 0.1s">
             <div class="product-img-wrap">
               <img src="/images/glass_shelf.jpg" class="product-img" alt="Glass Corner Shelves">
             </div>
@@ -64,7 +64,7 @@
             </div>
           </div>
           <!-- Item 3 -->
-          <div class="product-card fade-up" style="animation-delay: 0.2s">
+          <div class="product-card fade-up" data-category="plumbing" style="animation-delay: 0.2s">
             <div class="product-img-wrap">
               <img src="/images/drain.jpg" class="product-img" alt="Premium Floor Drains">
             </div>
@@ -74,7 +74,7 @@
             </div>
           </div>
           <!-- Item 4 -->
-          <div class="product-card fade-up" style="animation-delay: 0.3s">
+          <div class="product-card fade-up" data-category="sanitaryware" style="animation-delay: 0.3s">
             <div class="product-img-wrap">
               <img src="/images/health_faucet.jpg" class="product-img" alt="Health Faucets">
             </div>
@@ -84,7 +84,7 @@
             </div>
           </div>
           <!-- Item 5 -->
-          <div class="product-card fade-up">
+          <div class="product-card fade-up" data-category="sanitaryware">
             <div class="product-img-wrap">
               <img src="/images/towel_rod.jpg" class="product-img" alt="Towel Rods & Racks">
             </div>
@@ -94,7 +94,7 @@
             </div>
           </div>
           <!-- Item 6 -->
-          <div class="product-card fade-up" style="animation-delay: 0.1s">
+          <div class="product-card fade-up" data-category="sanitaryware" style="animation-delay: 0.1s">
             <div class="product-img-wrap">
               <img src="/images/kitchen_sink.jpg" class="product-img" alt="Quartz Kitchen Sinks">
             </div>
@@ -104,7 +104,7 @@
             </div>
           </div>
           <!-- Item 7 -->
-          <div class="product-card fade-up" style="animation-delay: 0.2s">
+          <div class="product-card fade-up" data-category="sanitaryware" style="animation-delay: 0.2s">
             <div class="product-img-wrap">
               <img src="/images/soap_dish.jpg" class="product-img" alt="Soap Dishes & Tumblers">
             </div>
@@ -114,7 +114,7 @@
             </div>
           </div>
           <!-- Item 8 -->
-          <div class="product-card fade-up" style="animation-delay: 0.3s">
+          <div class="product-card fade-up" data-category="hardware" style="animation-delay: 0.3s">
             <div class="product-img-wrap">
               <img src="/images/fasteners.jpg" class="product-img" alt="Fasteners & Bolts">
             </div>
@@ -124,7 +124,7 @@
             </div>
           </div>
           <!-- Item 9 -->
-          <div class="product-card fade-up">
+          <div class="product-card fade-up" data-category="plumbing">
             <div class="product-img-wrap">
               <img src="/images/pipes.jpg" class="product-img" alt="Plumbing Pipes & Tubes">
             </div>
@@ -134,7 +134,7 @@
             </div>
           </div>
           <!-- Item 10 -->
-          <div class="product-card fade-up" style="animation-delay: 0.1s">
+          <div class="product-card fade-up" data-category="hardware" style="animation-delay: 0.1s">
             <div class="product-img-wrap">
               <img src="/images/cement.jpg" class="product-img" alt="Cement & Adhesives">
             </div>
